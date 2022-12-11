@@ -10,11 +10,18 @@ html(lang="en")
     header 
       h1 Noom
     main
-      form#nick
-        input(type="text", placeholder="choose your nickname", required)
-        button Save
-      ul 
-      form#message
-        input(type="text", placeholder="write a message", required)
-        button Send
+      div#welcome
+        form
+          input(type="text", placeholder="room name", required)
+          button Enter room
+      div#call
+        div#myStream
+          video#myFace(autoplay, playsinline, width="400", height="400") 
+          button#mute Mute
+          button#camera Cam Off
+          select#cameras
+          video#peerFace(autoplay, playsinline, width="400", height="400") 
+          
+        
+    script(src="/socket.io/socket.io.js")   
     script(src="/public/js/app.js") 
